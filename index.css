@@ -1,0 +1,493 @@
+
+/* FONTS */
+@font-face {
+  font-family: 'goodchildBold';
+  src: 
+    url('./fonts/GoodchildBold.ttf') format('woff');
+}
+@font-face {
+  font-family: 'goodchildBoldItalic';
+  src: 
+    url('./fonts/GoodchildBoldItalic.ttf') format('woff');
+}
+@font-face {
+  font-family: 'goodchildItalic';
+  src: 
+    url('./fonts/GoodchildItalic.ttf') format('woff');
+}
+@font-face {
+  font-family: 'goodchildRegular';
+  src: 
+    url('./fonts/GoodchildRegular.ttf') format('woff');
+}
+
+
+
+/* GLOBAL */
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  height: 100%;
+}
+
+h1 {
+  font-family: goodchildBold;
+  font-size: 200px;
+}
+
+h2 {
+  font-family: goodchildRegular;
+  font-family: 100px;
+}
+
+h4 {
+  font-family: goodchildBold;
+  font-size: 24px;  
+}
+
+
+
+/* Hamburger button and Menu */
+
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; 
+  position: fixed;
+  z-index: 100;
+  right: 0;
+}
+.hamburger:hover {
+  opacity: 0.7; 
+}
+.hamburger.is-active:hover {
+  opacity: 0.7; 
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000; 
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; 
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; 
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease; 
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block; 
+}
+.hamburger-inner::before {
+  top: -10px; 
+}
+.hamburger-inner::after {
+  bottom: -10px; 
+}
+
+
+.hamburger--squeeze .hamburger-inner {
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+.hamburger--squeeze .hamburger-inner::before {
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease; 
+}
+.hamburger--squeeze .hamburger-inner::after {
+  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+
+.hamburger--squeeze.is-active .hamburger-inner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+ .hamburger--squeeze.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease; 
+}
+.hamburger--squeeze.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+
+
+#masthead {
+	position: fixed;
+  z-index: 100;
+	bottom: -100px;
+  width: 100%;
+  transition: bottom 1s ease;
+}
+
+.anchor-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.anchor {
+  position: relative;
+  padding: .8rem 2rem;
+  text-decoration: none;
+	font-size: 1rem;
+  color: white;
+  border-radius: 25px 25px 0px 0px;
+  height: 50px;
+  bottom: -10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+
+body .is-active ~ #masthead {
+  bottom: 0;
+}
+
+.anchor:nth-child(1) {
+  background-color: #000000;
+}
+.anchor:nth-child(2) {
+  background-color: #6BC2F7;
+}
+.anchor:nth-child(3) {
+  background-color: #F2902F;
+}
+.anchor:nth-child(4) {
+  background-color: #FF1D25;
+}
+.anchor:nth-child(5) {
+  background-color: #ADE283;
+}
+.anchor:nth-child(6) {
+  background-color: #F991BB;
+}
+.anchor:nth-child(7) {
+  background-color: #D86CD8;
+}
+
+.anchor:hover {
+  bottom: 0px;
+}
+
+
+
+/* CSS FOR ALL SECTIONS */
+
+
+#smooth-content {
+  -webkit-scroll-snap-type: y mandatory;
+  -ms-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;  
+}
+
+#section1, #secton2, #section3, #section4, #section5, #section6, #section7 {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Scroll Container */
+.basis-container, .school-container, .location-container, .testing-container, .graduate-container, .testimonial-container {
+  overscroll-behavior: none;
+  width: 500vw; 
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;  
+}
+
+.graduate-container, .testimonial-container {
+  width: 300vw;
+}
+
+.location-container {
+  width: 400vw;
+}
+
+
+/* Panel Defaults */
+/* .basis, .panel, .location, .testing, .graduate, .testimonial {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  box-sizing: border-box;
+  padding: 3em;
+} */
+
+
+
+
+
+/* Initial Sections and Homepage */
+
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  scroll-snap-align: start;
+}
+
+#bg_back, #bg_front, #bcs{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+#bg_front, #bg_back, #students {
+  height: 100%;
+}
+
+#bg_front {
+  opacity: 1;
+}
+/* #bg_back {
+  opacity: 0;
+} */
+
+#bcs {
+  position: absolute;
+  top: 4%;
+  left: 2%;
+  width: auto;
+  height: auto;
+}
+
+#title {
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+
+
+/* BEST OF BASIS */
+
+
+/* BASIS Mask */
+ 
+.best-of-basis {
+  padding: 4rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.basis-title {
+  position: relative;
+  width: 100%;
+}
+.basis-h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style: none;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+.basis-h1-mask-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  outline: 1px transparent;
+}
+.basis-h1-mask {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+
+
+
+.basis.two .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.basis.two .content .text-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 4rem;
+}
+.basis.two .content .leadership {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 65%;
+  background-color: #F0F4F7;
+  border-radius: 50px 0 0 0;
+}
+
+
+
+
+.kids1, .kids2 {
+  /* position: absolute; */
+  width: auto;
+  height: 80%;
+  object-fit: cover;
+}
+
+
+.leadership {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.basis-and-texas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.basis-charter, .texas-charter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.person-name {
+  background-color: #CDEAFC;
+  padding: 2rem;
+  width: 191px;
+  margin-top: -5px;
+  border-radius: 0 0 0 30px;
+}
+
+
+
+
+/* Locations */
+
+.arizona {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.arizona-locations {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.arizona-locations, .arizona-map {
+  width: 100%
+}
+.city-link {
+  display: flex;
+}
+.city-link svg {
+  margin-right: .5rem;
+}
+
+.locations-menu nav, .phoenix-area, .north-south-arizona, .north-arizona, .south-arizona {
+  display: flex;
+  flex-direction: column;
+}
+.phoenix-area h4, .north-arizona h4, .south-arizona h4 {
+  padding-bottom: 1rem;
+}
+.phoenix-area p, .north-arizona p, .south-arizona p {
+  padding-bottom: 1rem;
+}
+
+
+
+/* Testing and Scoring */
+
+
+.testing .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.testing .content .text-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+canvas {
+  aspect-ratio: auto 960 / 400;
+  background: white;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  /* color: black; */
+}
