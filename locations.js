@@ -1,4 +1,13 @@
+
+
+// Arizona Locations
+
 const arizonaSVG = document.querySelector('#Arizona');
+
+arizonaSVG.addEventListener("click", function() {
+  gsap.to(arizonaSVG, {attr:{viewBox: "0 0 691.864 833"}});
+});
+
 
 const ahwatukee = document.querySelector('#ahwatukee');
 const ahwatukeePin = document.querySelector('#ahwatukee-pin');
@@ -8,13 +17,14 @@ ahwatukee.addEventListener("click", function() {
   gsap.to(arizonaSVG, {attr:{viewBox:"265 450 100 100"}});
   tippy(ahwatukeePin, {
     trigger: 'click',
-    triggerTarget: ahwatukee,
+    triggerTarget: ahwatukee, 
     content: ahwatukeeContent.innerHTML,
     placement: 'bottom',
     allowHTML: true,
     zIndex: 100
   });
 });
+
 
 
 const chandler = document.querySelector('#chandler');
@@ -90,4 +100,76 @@ tippy(scottsdalePrimaryWestPin, {
   allowHTML: true,
   maxWidth: 300,
   zIndex: 100
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Texas Locations
+
+
+const texasSVG = document.querySelector('#Texas');
+
+texasSVG.addEventListener("click", function() {
+  gsap.to(texasSVG, {attr:{viewBox: "0 0 767.493 775.016"}});
+});
+
+
+const jackLewisJr = document.querySelector('#jack-lewis-jr');
+const jackLewisJrPin = document.querySelector('#jack-lewis-jr-pin');
+const jackLewisJrContent = document.querySelector('#jack-lewis-jr-content');
+
+tippy(jackLewisJrPin, {
+  trigger: 'click',
+  triggerTarget: jackLewisJr,
+  content: jackLewisJrContent.innerHTML,
+  placement: 'bottom',
+  allowHTML: true,
+  zIndex: 100
+});
+
+
+jackLewisJr.addEventListener("click", function(event) {
+  event.preventDefault();
+  gsap.to(texasSVG, {attr:{viewBox:"415 455 100 100"}});
+
+  tippy(jackLewisJrPin, {
+    trigger: 'click',
+    triggerTarget: jackLewisJr,
+    content: jackLewisJrContent.innerHTML,
+    placement: 'bottom',
+    allowHTML: true,
+    zIndex: 100
+  });
+});
+
+
+
+const medical = document.querySelector('#medical');
+const medicalPin = document.querySelector('#medical-pin');
+const medicalContent = document.querySelector('#medical-content');
+
+medical.addEventListener("click", function() {
+  gsap.to(texasSVG, {attr:{viewBox:"420 450 100 100"}});
+  tippy(medicalPin, {
+    trigger: 'click',
+    triggerTarget: medical,
+    content: medicalContent.innerHTML,
+    placement: 'bottom',
+    allowHTML: true,
+    zIndex: 100
+  });
 });
