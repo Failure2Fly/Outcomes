@@ -123,37 +123,36 @@ tippy(scottsdalePrimaryWestPin, {
 
 const texasSVG = document.querySelector('#Texas');
 
-texasSVG.addEventListener("click", function() {
-  gsap.to(texasSVG, {attr:{viewBox: "0 0 767.493 775.016"}});
-});
+// texasSVG.addEventListener("click", function() {
+//   gsap.to(texasSVG, {attr:{viewBox: "0 0 767.493 775.016"}});
+// });
 
 
 const jackLewisJr = document.querySelector('#jack-lewis-jr');
 const jackLewisJrPin = document.querySelector('#jack-lewis-jr-pin');
 const jackLewisJrContent = document.querySelector('#jack-lewis-jr-content');
 
+
+// jackLewisJr.addEventListener("click", function() {
+//   gsap.to(texasSVG, {attr:{viewBox:"415 455 100 100"}});
+//   // jackLewisJrTip.show();
+// });
+
 tippy(jackLewisJrPin, {
   trigger: 'click',
   triggerTarget: jackLewisJr,
   content: jackLewisJrContent.innerHTML,
   placement: 'bottom',
+  interactive: true,
   allowHTML: true,
-  zIndex: 100
-});
-
-
-jackLewisJr.addEventListener("click", function(event) {
-  event.preventDefault();
-  gsap.to(texasSVG, {attr:{viewBox:"415 455 100 100"}});
-
-  tippy(jackLewisJrPin, {
-    trigger: 'click',
-    triggerTarget: jackLewisJr,
-    content: jackLewisJrContent.innerHTML,
-    placement: 'bottom',
-    allowHTML: true,
-    zIndex: 100
-  });
+  zIndex: 100,
+  onCreate(instance) {
+    instance.enable();
+    jackLewisJr.addEventListener("click", function() {
+      gsap.to(texasSVG, {attr:{viewBox:"415 455 100 100"}});
+      // jackLewisJrTip.show();
+    });
+  },
 });
 
 
