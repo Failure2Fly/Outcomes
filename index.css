@@ -56,6 +56,9 @@ h4 {
   font-size: 24px;  
 }
 
+a {
+  font-family: goodchildRegular;
+}
 
 
 /* Hamburger button and Menu */
@@ -440,7 +443,17 @@ section {
 }
 
 .arizona-locations, .arizona-map, .texas-locations, .texas-map {
-  width: 100%
+  width: 100%;
+  height: 100%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+.arizona, .texas {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .city-link {
   display: flex;
@@ -467,7 +480,9 @@ section {
 {
   padding: .5rem 0;
 }
-
+.tooltip a {
+  color: #000000;
+}
 
 
 /* Testing and Scoring */
@@ -486,8 +501,26 @@ section {
 }
 
 
+.stat-container {
+  position: relative;
+  display: inline-block;
+}
 
+.cloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
 
+.stat {
+  position: relative;
+  z-index: 1;
+}
+
+.stat-container:hover .cloud {
+  opacity: 0;
+}
 
 
 
