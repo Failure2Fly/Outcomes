@@ -32,7 +32,7 @@ let outcomeIntro = Observer.create({
 function studentScrollDown() {
   gsap.to("#students" , {
     duration: 3,
-    xPercent: 100,
+    xPercent: 110,
     ease: "linear"
   });
 

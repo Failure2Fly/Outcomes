@@ -2,6 +2,19 @@
 // Arizona Locations
 
 const arizonaSVG = document.querySelector('#arizona');
+const zoomOut = document.querySelector('.zoom-out');
+
+
+zoomOut.addEventListener("click", function() {
+  gsap.to(texasSVG, {
+    attr:{viewBox:"0 0 691.864 833"},
+    duration: 1
+  });
+  gsap.to(zoomOut, {
+    opacity: 0
+  });  
+});
+
 
 const ahwatukee = document.querySelector('#ahwatukee');
 const ahwatukeePin = document.querySelector('#ahwatukee-pin');
@@ -10,7 +23,10 @@ const ahwatukeeContent = document.querySelector('#ahwatukee-content');
 ahwatukee.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"265 450 100 100"},
-  })
+  });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(ahwatukeePin, {
   trigger: 'click',
@@ -29,7 +45,10 @@ const chandlerContent = document.querySelector('#chandler-content');
 chandler.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"275 475 100 100"},
-  })
+  });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(chandlerPin, {
   trigger: 'click',
@@ -49,7 +68,10 @@ const chandlerPrimaryNorthContent = document.querySelector('#chandler-primary-no
 chandlerPrimaryNorth.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"285 460 100 100"},
-  })
+  });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(chandlerPrimaryNorthPin, {
   trigger: 'click',
@@ -69,7 +91,10 @@ const mesaContent = document.querySelector('#mesa-content');
 mesa.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"305 460 100 100"},
-  })
+  });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(mesaPin, {
   trigger: 'click',
@@ -91,7 +116,10 @@ const scottsdalePrimaryWestContent = document.querySelector('#scottsdale-primary
 scottsdalePrimaryWest.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"280 425 100 100"},
-  })
+  });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(scottsdalePrimaryWestPin, {
   trigger: 'click',
@@ -126,16 +154,30 @@ tippy(scottsdalePrimaryWestPin, {
 const texasSVG = document.querySelector('#Texas');
 
 
+zoomOut.addEventListener("click", function() {
+  gsap.to(texasSVG, {
+    attr:{viewBox:"0 0 767.493 775.016"},
+    duration: 1
+  });
+  gsap.to(zoomOut, {
+    opacity: 0
+  });  
+});
+
+
+
 const jackLewisJr = document.querySelector('#jack-lewis-jr');
 const jackLewisJrPin = document.querySelector('#jack-lewis-jr-pin');
 const jackLewisJrContent = document.querySelector('#jack-lewis-jr-content');
-
 
 jackLewisJr.addEventListener("click", function() {
   gsap.to(texasSVG, {
     attr:{viewBox:"415 460 100 100"},
     duration: 1
-  })
+  });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(jackLewisJrPin, {
   trigger: 'click',
@@ -156,6 +198,9 @@ medical.addEventListener("click", function() {
     attr:{viewBox:"420 455 100 100"},
     duration: 1
   });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(medicalPin, {
   trigger: 'click',
@@ -176,6 +221,9 @@ northeast.addEventListener("click", function() {
     attr:{viewBox:"435 450 100 100"},
     duration: 1
   });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(northeastPin, {
   trigger: 'click',
@@ -196,6 +244,9 @@ northCentral.addEventListener("click", function() {
     attr:{viewBox:"425 450 100 100"},
     duration: 1
   });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(northCentralPin, {
   trigger: 'click',
@@ -216,6 +267,9 @@ shavano.addEventListener("click", function() {
     attr:{viewBox:"425 450 100 100"},
     duration: 1
   });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(shavanoPin, {
   trigger: 'click',
@@ -236,6 +290,9 @@ benbrook.addEventListener("click", function() {
     attr:{viewBox:"490 225 100 100"},
     duration: 1
   });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(benbrookPin, {
   trigger: 'click',
@@ -256,6 +313,9 @@ austin.addEventListener("click", function() {
     attr:{viewBox:"475 385 100 100"},
     duration: 1
   });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(austinPin, {
   trigger: 'click',
@@ -276,6 +336,9 @@ cedarPark.addEventListener("click", function() {
     attr:{viewBox:"465 380 100 100"},
     duration: 1
   });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(cedarParkPin, {
   trigger: 'click',
@@ -296,6 +359,9 @@ pflugerville.addEventListener("click", function() {
     attr:{viewBox:"480 385 100 100"},
     duration: 1
   });
+  gsap.to(zoomOut, {
+    opacity: 1
+  });  
 });
 tippy(pflugervillePin, {
   trigger: 'click',
