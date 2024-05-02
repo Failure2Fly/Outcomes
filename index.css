@@ -611,16 +611,6 @@ section {
 
 /*  Stat Window Start */
 
-a {
-  color: #ccc;
-  text-decoration: none;
-}
-
-h1 {
-  font-family: 'Courgette', cursive;
-  color: #0D5212;
-}
-
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -630,12 +620,6 @@ h1 {
 
 .box {
   position: relative;
-}
-img {
-  width: 280px;
-  height: 200px;
-  -webkit-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.75);
 }
 
 .stat {
