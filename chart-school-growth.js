@@ -21,24 +21,36 @@ schoolGrowthOptions = {
       '2021',
       '2022',
       '2023'
-    ]
+    ],
+    axisPointer: {
+      value: "2016-10-7",
+      snap: true,
+      label: {
+        show: true
+      },
+      handle: {
+        show: true
+      }
+    },
+    splitLine: {
+      show: false
+    }
   },
   yAxis: {
     type: 'value',
+    name: 'Student Enrollment',
+    nameTextStyle: {
+      fontSize: 16
+    },
     interval: 7500,
     max: 30000
   },
   tooltip: {
-    trigger: 'axis'
-  },
-  dataset: {
-    dimensions: ['product', '2015', '2016', '2017'],
-    source: [
-      {product: 'Matcha Latte', '2015': 43.3, '2016': 85.8, '2017': 93.7},
-      {product: 'Milk Tea', '2015': 83.1, '2016': 73.4, '2017': 55.1},
-      {product: 'Cheese Cocoa', '2015': 86.4, '2016': 65.2, '2017': 82.5},
-      {product: 'Walnut Brownie', '2015': 72.4, '2016': 53.9, '2017': 39.1}
-    ]
+    triggerOn: "none",
+    alwaysShowContent: true,
+    position: function(pt) {
+      return [pt[0], 130];
+    }
   },
   series: [
     {
@@ -47,7 +59,8 @@ schoolGrowthOptions = {
         20425, 20248, 21928, 22903
       ],
       type: 'line',
-      name: 'series'
+      name: 'Student Enrollment',
+      animationDuration: 5000
     }
   ]
 };

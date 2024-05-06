@@ -2,15 +2,15 @@
 // Arizona Locations
 
 const arizonaSVG = document.querySelector('#arizona');
-const zoomOut = document.querySelector('.zoom-out');
+const arizonaZoomOut = document.querySelector('.arizona-zoom-out');
 
 
-zoomOut.addEventListener("click", function() {
+arizonaZoomOut.addEventListener("click", function() {
   gsap.to(texasSVG, {
     attr:{viewBox:"0 0 691.864 833"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(arizonaZoomOut, {
     opacity: 0
   });  
 });
@@ -24,7 +24,7 @@ ahwatukee.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"265 450 100 100"},
   });
-  gsap.to(zoomOut, {
+  gsap.to(arizonaZoomOut, {
     opacity: 1
   });  
 });
@@ -46,7 +46,7 @@ chandler.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"275 475 100 100"},
   });
-  gsap.to(zoomOut, {
+  gsap.to(arizonaZoomOut, {
     opacity: 1
   });  
 });
@@ -69,7 +69,7 @@ chandlerPrimaryNorth.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"285 460 100 100"},
   });
-  gsap.to(zoomOut, {
+  gsap.to(arizonaZoomOut, {
     opacity: 1
   });  
 });
@@ -92,7 +92,7 @@ mesa.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"305 460 100 100"},
   });
-  gsap.to(zoomOut, {
+  gsap.to(arizonaZoomOut, {
     opacity: 1
   });  
 });
@@ -117,7 +117,7 @@ scottsdalePrimaryWest.addEventListener("click", function() {
   gsap.to(arizonaSVG, {
     attr:{viewBox:"280 425 100 100"},
   });
-  gsap.to(zoomOut, {
+  gsap.to(arizonaZoomOut, {
     opacity: 1
   });  
 });
@@ -152,14 +152,15 @@ tippy(scottsdalePrimaryWestPin, {
 
 
 const texasSVG = document.querySelector('#Texas');
+const texasZoomOut = document.querySelector('.texas-zoom-out');
 
 
-zoomOut.addEventListener("click", function() {
+texasZoomOut.addEventListener("click", function() {
   gsap.to(texasSVG, {
     attr:{viewBox:"0 0 767.493 775.016"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 0
   });  
 });
@@ -175,7 +176,7 @@ jackLewisJr.addEventListener("click", function() {
     attr:{viewBox:"415 460 100 100"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 1
   });  
 });
@@ -198,7 +199,7 @@ medical.addEventListener("click", function() {
     attr:{viewBox:"420 455 100 100"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 1
   });  
 });
@@ -221,7 +222,7 @@ northeast.addEventListener("click", function() {
     attr:{viewBox:"435 450 100 100"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 1
   });  
 });
@@ -244,7 +245,7 @@ northCentral.addEventListener("click", function() {
     attr:{viewBox:"425 450 100 100"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 1
   });  
 });
@@ -267,7 +268,7 @@ shavano.addEventListener("click", function() {
     attr:{viewBox:"425 450 100 100"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 1
   });  
 });
@@ -290,7 +291,7 @@ benbrook.addEventListener("click", function() {
     attr:{viewBox:"490 225 100 100"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 1
   });  
 });
@@ -313,7 +314,7 @@ austin.addEventListener("click", function() {
     attr:{viewBox:"475 385 100 100"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 1
   });  
 });
@@ -336,7 +337,7 @@ cedarPark.addEventListener("click", function() {
     attr:{viewBox:"465 380 100 100"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 1
   });  
 });
@@ -359,7 +360,7 @@ pflugerville.addEventListener("click", function() {
     attr:{viewBox:"480 385 100 100"},
     duration: 1
   });
-  gsap.to(zoomOut, {
+  gsap.to(texasZoomOut, {
     opacity: 1
   });  
 });

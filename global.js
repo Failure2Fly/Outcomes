@@ -107,7 +107,7 @@ gsap.to(basis, {
     pin: true,
     scrub: 1,
     // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=5000"
+    end: "+=2000"
   }
 });
 
@@ -159,7 +159,7 @@ gsap.to(sections, {
     pin: true,
     scrub: 1,
     // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=5000"
+    end: "+=1000"
   }
 });
 
@@ -174,7 +174,7 @@ gsap.to(locations, {
     pin: true,
     scrub: 1,
     // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=4000"
+    end: "+=3000"
   }
 });
 
@@ -207,7 +207,7 @@ gsap.to(testing, {
     pin: true,
     scrub: 1,
     // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=5000"
+    end: "+=4000"
   }
 });
 
@@ -221,7 +221,7 @@ gsap.to(graduate, {
     pin: true,
     scrub: 1,
     // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=3000"
+    end: "+=2000"
   }
 });
 
@@ -235,7 +235,7 @@ gsap.to(testimonial, {
     pin: true,
     scrub: 1,
     // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=3000"
+    end: "+=1000"
   }
 });
 

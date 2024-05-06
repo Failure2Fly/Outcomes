@@ -69,9 +69,13 @@ h6 {
   font-size: 16px;  
 }
 
+p {
+  font-family: goodchildRegular;
+  font-size: 20px;
+}
 
 a {
-  font-family: goodchildRegular;
+  font-family: goodchildPro;
 }
 
 
@@ -249,18 +253,20 @@ body .is-active ~ #masthead {
 /* Scroll Container */
 .basis-container, .school-container, .location-container, .testing-container, .graduate-container, .testimonial-container {
   overscroll-behavior: none;
-  width: 500vw; 
+  width: 400vw; 
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;  
 }
 
-.graduate-container, .testimonial-container {
+.location-container {
   width: 300vw;
 }
-
-.location-container {
-  width: 400vw;
+.basis-container, .graduate-container {
+  width: 200vw;
+}
+.school-container, .testimonial-container {
+  width: 100vw;
 }
 
 
@@ -383,8 +389,23 @@ section {
   white-space: nowrap;
 }
 
-
-
+.basis-welcome {
+  margin-top: 3rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 60%;
+  flex-wrap: wrap;
+  column-gap: 3rem;
+}
+.basis-welcome p {
+  margin-top: 1rem;
+}
+.basis-welcome p:nth-child(1) {
+  color: #5191B9;
+  font-weight: 800;
+}
 .basis .content {
   padding: 3rem;
 }
@@ -401,6 +422,19 @@ section {
   width: 100%;
   padding: 4rem;
 }
+.basis.two .content .text-box h4 {
+  margin-top: 1rem;
+  font-size: 20px;
+  font-weight: 800;
+  color: #5191B9;
+}
+.basis.two .content .text-box p {
+  margin-top: 1rem;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+}
+
 .basis.two .content .leadership {
   display: flex;
   flex-direction: column;
@@ -411,6 +445,9 @@ section {
   border-radius: 50px 0 0 0;
 }
 
+.kids1 {
+  padding-left: 1rem;
+}
 .kids1, .kids2 {
   /* position: absolute; */
   width: auto;
@@ -469,8 +506,81 @@ section {
 
 .panel {
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.panel h3 {
+  color: #F2902F;
+  font-weight: 400;
 }
 
+
+/*  */
+
+/* .panel-nav .active {
+  position: fixed;
+  top: 200px;
+} */
+
+.panel-nav li {
+  height: 30px;
+  display: flex;
+  position: relative;
+  margin-top: 0;
+}
+
+.panel-nav li:first-of-type {
+  margin-top: 0;
+}
+
+.panel-nav li:hover, a {
+  text-decoration: none;
+  color: #242424;
+}
+
+.panel-nav li .dot {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #707070;
+  border-radius: 50%;
+  transform: translateX(-1.5rem);
+  z-index: 1;
+}
+
+.panel-nav li .line, .panel-nav li .line-top {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 6px;
+  top: 15px;
+  width: 2px;
+  height: 20px;
+  background-color: #707070;
+  transform: translateX(-1.5rem);
+  z-index: 0;
+}
+.panel-nav li .line-top {
+  top: -15px;
+}
+/*  */
+
+
+
+
+
+
+/* Locations */
+.location {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
 .arizona, .texas {
   display: flex;
   justify-content: space-evenly;
@@ -527,22 +637,12 @@ section {
 .tooltip a {
   color: #000000;
 }
-.zoom-out {
+.arizona-zoom-out, .texas-zoom-out {
   position: absolute;
   top: 0;
   left: 0;
   padding: 1rem;
   opacity: 0;
-}
-
-
-
-
-/* Locations */
-.location {
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
 }
 
 
@@ -618,13 +718,24 @@ section {
   justify-content: space-evenly;
 }
 
+.stat-boxes {
+  width: 25%;
+  padding: 3rem;
+}
+.stat-boxes .text p {
+  padding-top: 1rem;
+}
+
 .box {
   position: relative;
 }
 
 .stat {
-  width: 280px;
+  width: 100%;
   height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .stat h3 {
   position: absolute;
@@ -647,7 +758,7 @@ section {
 }
 
 .ovrl-left {
-  width: 130px;
+  width: 50%;
   left: 50%;
   /* -webkit-box-shadow: 9px 0px 19px 0px rgba(105, 109, 122, 1);
   box-shadow: 9px 0px 19px 0px rgba(105, 109, 122, 1); */
@@ -656,7 +767,7 @@ section {
 }
 
 .ovrl-right {
-  width: 130px;
+  width: 50%;
   right: 50%;
   /* -webkit-box-shadow: -9px 0px 19px 0px rgba(105, 109, 122, 1);
   box-shadow: -9px 0px 19px 0px rgba(105, 109, 122, 1); */
@@ -757,9 +868,32 @@ i.arrow {
 
 /* Graduate Profile */
 .graduate {
-  padding: 3rem;
   display: flex;
   flex-direction: column;
+}
+.graduate .top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.top-row h2 {
+  padding: 3rem;
+  color: #FA65A1;
+  font-weight: 400;
+}
+.top-row .images {
+  margin-top: -2rem;
+}
+.top-row .images .purple {
+  position: relative;
+  top: 50px;
+  left: -3%;
+  z-index: 2;
+}
+.top-row .images .green {
+  position: relative;
+  left: -15%;
 }
 .colleges {
   display: grid;
@@ -768,6 +902,7 @@ i.arrow {
   grid-gap: 2vmin;
   justify-items: center;
   align-items: center;
+  padding: 3rem;
 }
 
 
@@ -788,17 +923,3 @@ canvas {
   overflow: clip;
   /* color: black; */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
