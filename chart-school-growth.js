@@ -47,19 +47,43 @@ schoolGrowthOptions = {
   },
   tooltip: {
     triggerOn: "none",
-    alwaysShowContent: true,
-    position: function(pt) {
-      return [pt[0], 130];
-    }
+    alwaysShowContent: true
   },
   series: [
     {
-      data: [
-        58, 382, 1858, 3838, 5319, 7523, 10946, 12804, 14890, 16994, 19334,
-        20425, 20248, 21928, 22903
-      ],
       type: 'line',
       name: 'Student Enrollment',
+      data: ['54', '382', '1858', '3837', '5319', '7523', '10946', '12804', '14890', '16994', '19334', '20425', '20248', '21928', '22903'],
+      animationDuration: 5000
+    },
+    {
+      type: 'line',
+      name: 'School',
+      data: ['BASIS Tuscon North', 'BASIS Scottsdale', 'BASIS Oro Valley', 'BASIS Chandler', 'BASIS Phoenix', 'BASIS Ahwatukee', 'BASIS Oro Valley Primary', 'BASIS Chandler Primary South', 'BASIS Chandler Primary North', 'BASIS Peoria Primary', 'BASIS Baton Rouge Materra', 'BASIS Austin Primary', 'BASIS Austin', 'BASIS Benbrook', 'BASIS Cedar Park'],
+      animationDuration: 5000
+    },
+    {
+      type: 'line',
+      name: 'School',
+      data: ['', '', '', 'BASIS Flagstaff', 'BASIS Washington, D.C.', 'BASIS Mesa', 'BASIS Phoenix Central', 'BASIS Phoenix South', '', 'BASIS Goodyear', 'BASIS Phoenix Primary', 'BASIS San Antonio Northeast', 'BASIS Baton Rouge Primary Mid City', 'BASIS San Antonio Jack Lewis Jr.', 'BASIS Cedar Park Primary'],
+      animationDuration: 5000
+    },
+    {
+      type: 'line',
+      name: 'School',
+      data: ['', '', '', 'BASIS Peoria', '', 'BASIS San Antonio Shavano', 'BASIS Prescott', 'BASIS Goodyear Primary', '', 'BASIS San Antonio Primary Medical Center', 'BASIS Scottsdale Pimary West', 'BASIS San Antonio Primary Northeast', '', 'BASIS San Antonio Primary Jack Lewis Jr.', ''],
+      animationDuration: 5000
+    },
+    {
+      type: 'line',
+      name: 'School',
+      data: ['', '', '', '', '', 'BASIS Tuscon Primary', 'BASIS San Antonio Primary North Central', 'BASIS Scottsdale Primary East', '', '', '', '', '', 'BASIS Pflugerville', ''],
+      animationDuration: 5000
+    },
+    {
+      type: 'line',
+      name: 'School',
+      data: ['', '', '', '', '', '', '', '', '', '', '', '', '', 'BASIS Pflugerville Primary', ''],
       animationDuration: 5000
     }
   ]

@@ -1,7 +1,7 @@
 
 // Arizona Locations
 
-const arizonaSVG = document.querySelector('#arizona');
+const arizonaSVG = document.querySelector('#arizona-map');
 const arizonaZoomOut = document.querySelector('.arizona-zoom-out');
 
 
@@ -151,7 +151,7 @@ tippy(scottsdalePrimaryWestPin, {
 // Texas Locations
 
 
-const texasSVG = document.querySelector('#Texas');
+const texasSVG = document.querySelector('#texas-map');
 const texasZoomOut = document.querySelector('.texas-zoom-out');
 
 
