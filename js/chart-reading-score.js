@@ -1,6 +1,8 @@
-var mathScore = document.getElementById('math_score');
 
-  var myChartMath = echarts.init(mathScore, null, {
+  var readingScore = document.getElementById('reading_score');
+
+
+  var myChartReading = echarts.init(readingScore, null, {
     renderer: 'svg',
     useDirtyRect: false
   });
@@ -8,14 +10,20 @@ var mathScore = document.getElementById('math_score');
 
   var app = {};
 
-  var mathOptions;
 
-  mathOptions = {
+  var readingOptions;
+
+
+  readingOptions = {
     title: {
-      text: 'MATH Score'
+      text: 'READING Score',
+      left: "25%"
+    },
+    grid: {
+      containLabel: true
     },
     tooltip: {
-      
+
     },
     xAxis: {
       splitLine:{ show: false },
@@ -31,31 +39,31 @@ var mathScore = document.getElementById('math_score');
       type: 'bar',
       data: [
       {
-        value: 478,
+        value: 502,
         itemStyle: {
           color: "#93C3CE"
         }
       }, 
       {
-        value: 558,
+        value: 544,
         itemStyle: {
           color: "#93C3CE" 
         }
       },
       {
-        value: 569,
+        value: 551,
         itemStyle: {
           color: "#93C3CE" 
         }
       },
       {
-        value: 591,
+        value: 590,
         itemStyle: {
           color: "#93C3CE" 
         }
       },
       {
-        value: 609,
+        value: 620,
         itemStyle: {
           color: "#7AC943" 
         }
@@ -65,11 +73,12 @@ var mathScore = document.getElementById('math_score');
 
 
 
-  if (mathOptions && typeof mathOptions === 'object') {
-    myChartMath.setOption(mathOptions);
+  if (readingOptions && typeof readingOptions === 'object') {
+    myChartReading.setOption(readingOptions);
   }
 
-  window.addEventListener('resize', myChartMath.resize);
+
+  window.addEventListener('resize', myChartReading.resize);
 
 
       

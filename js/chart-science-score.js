@@ -13,10 +13,14 @@
 
   scienceOptions = {
     title: {
-      text: 'SCIENCE Score'
+      text: 'SCIENCE Score',
+      left: "25%"
+    },
+    grid: {
+      containLabel: true
     },
     tooltip: {
-      
+
     },
     xAxis: {
       splitLine:{ show: false },

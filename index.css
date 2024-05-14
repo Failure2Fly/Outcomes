@@ -618,9 +618,32 @@ section {
 .city-link {
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 .city-link svg {
   margin-right: .5rem;
+}
+.city-link.new {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: solid 1px black;
+  width: fit-content;
+  padding: 5px;
+  margin-top: 2rem;
+}
+.city-link.new .opening {
+  margin-top: -1.5rem;
+  background-color: white;
+  padding: 5px;
+}
+.city-link .info {
+  display: flex;
+  flex-direction: row;
+}
+.city-link .info.column {
+  display: flex;
+  flex-direction: column;
 }
 
 .locations-menu nav, .phoenix-area, .north-south-arizona, .north-arizona, .south-arizona {
@@ -638,7 +661,7 @@ section {
 .phoenix-area p, .north-arizona p, .south-arizona p,
 .austin-area  p, .dallas-ft-worth-area p, .san-antonio-area p
 {
-  padding: .5rem 0;
+  padding: .25rem 0;
 }
 .tooltip a {
   color: #000000;
@@ -658,6 +681,7 @@ section {
   padding: 3rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .testing .content {
@@ -667,10 +691,54 @@ section {
   justify-content: center;
   width: 100%;
 }
-.testing .content .text-box {
+.testing.one .content .text-box {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 33%;
+  height: 100%;
+  justify-content: space-evenly;
+}
+.testing.one .content .text-box li {
+  list-style: none;
+  margin-top: .2rem;
+}
+.country-rankings {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: solid 1px black;
+}
+.oced-scores {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stats {
+  height: 100%;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.stat-one, .stat-two, .stat-three {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stat-three h3, .stat-two h3 {
+  color: #4EA00F;
+}
+.stat-two p, .stat-three p {
+  text-align: center;
+}
+.source {
+  width: 60%;
+}
+.source p {
+  font-size: 14px;
 }
 
 
@@ -687,26 +755,6 @@ section {
   position: relative;
   display: inline-block;
 }
-
-.cloud {
-  position: absolute;
-  top: 30px;
-  left: 70px;
-  transition: opacity 1s ease;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  background-color: white;
-}
-
-.stat {
-  position: relative;
-}
-
-.stat-container:hover .cloud {
-  opacity: 0;
-}
-
-
 .panel.four , .panel.five {
   display: flex;
   flex-direction: column;
@@ -937,6 +985,7 @@ i.arrow {
   padding: 3rem;
   background: #EDF2F8;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -945,8 +994,8 @@ i.arrow {
 	margin: 1rem;
 	display: grid;
 	grid-gap: 1.5rem;
-	grid-template-rows: repeat(2, 16rem);
-	grid-template-columns: repeat(4, 20rem);
+	/* grid-template-rows: repeat(2, 16rem);
+	grid-template-columns: repeat(4, 20rem); */
 }
 .eachdiv {
 	padding: 1rem 2rem;
@@ -958,9 +1007,6 @@ i.arrow {
 	background: #f4d8bd;
   grid-column: 1/2;
   grid-row: 1/3;
-  background-image: url(https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/bg-pattern-quotation.svg);
-  background-repeat: no-repeat;
-  background-position-x: 25rem;
 }
 .div2 {
 	background:#bdc3e6;
@@ -996,7 +1042,7 @@ i.arrow {
 }
 
 .div1:hover, .div2:hover, .div3:hover, .div4:hover, .div5:hover, .div6:hover, .div7:hover {
-  transform: scale(1.5);
+  transform: scale(1.4);
   transition: all 1s;
   z-index: 2;
 }
