@@ -122,12 +122,14 @@ function drawBasic() {
 
       var options = {
         hAxis: { 
-          ticks: [0, 1000, 7500 ,15000 , 22500]
+          title: 'hover over each dot to view enrollment amount and schools added'
         },
         vAxis: {
-          scaleType: 'linear'
+          scaleType: 'linear',
+          ticks: [0, 1000, 7500 ,15000 , 22500]
         },
         pointSize: 5,
+        legend: { position: 'none' },
         tooltip: { isHtml: true }
       };
 
