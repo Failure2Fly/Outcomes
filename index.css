@@ -677,8 +677,7 @@ section {
 
 
 /* Testing and Scoring */
-.testing {
-  padding: 3rem;
+.testing.one {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -690,6 +689,7 @@ section {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100%;
 }
 .testing.one .content .text-box {
   display: flex;
@@ -697,6 +697,7 @@ section {
   width: 33%;
   height: 100%;
   justify-content: space-evenly;
+  padding: 3rem;
 }
 .testing.one .content .text-box li {
   list-style: none;
@@ -736,14 +737,25 @@ section {
 }
 .source {
   width: 60%;
+  padding: 3rem;
 }
 .source p {
   font-size: 14px;
 }
 
-
-
-.panel.three {
+.testing.two .content {
+  justify-content: space-between;
+}
+.testing.two .text-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+}
+.testing.two .text-box .top-image {
+  width: 75%;
+}
+.testing.two .text-box .sat-act {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -751,13 +763,53 @@ section {
   width: 100%;
   height: 100%;
 }
-.stat-container {
-  position: relative;
-  display: inline-block;
+.sat-act h4 {
+  font-weight: 800;
+  font-size: 32px;
 }
-.panel.four , .panel.five {
+.act-sat-stats {
+  margin-left: -50px;
+}
+.testing.two .national-rankings {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 50%;
+  padding: 1rem;
+  background-color: #A9D1D5;
+  border-radius: 150px 0 0 0;
+  opacity: 25%;
+}
+
+
+
+.arizona-stats, .texas-stats, .louisiana-stats, .washington-stats {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.arizona-stats {
+  background-image: url(./images/faded-arizona.png);
+}
+.arizona-stats img {
+  position: absolute;
+  top: -4%;
+  left: 25%;
+}
+.texas-stats {
+  background-image: url(./images/faded-texas.png);
+}
+.texas-stats img {
+  position: absolute;
+  bottom: -5%;
+  right: 5%;
+}
+.louisiana-stats {
+  background-image: url(./images/faded-louisiana.png);
+}
+.washington-stats {
+  background-image: url(./images/faded-washington-dc.png);
 }
 
 
