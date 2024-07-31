@@ -200,7 +200,7 @@ a {
   display: flex;
   align-items: flex-start;
   font-weight: 600;
-  letter-spacing: .1rem;
+  letter-spacing: .1rem
 }
 
 
@@ -320,12 +320,17 @@ section {
   height: 100%;
 }
 
-#bg_front {
-  opacity: 1;
+#students {
+  z-index: 2;
 }
-/* #bg_back {
-  opacity: 0;
-} */
+
+#bg_front {
+  filter: blur(2px);
+}
+
+#bg_back {
+  filter: blur(4px);
+}
 
 #bcs {
   position: absolute;
@@ -343,6 +348,13 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+  background: rgba( 220, 199, 199, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 45px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 3rem;
 }
 
 
@@ -363,7 +375,31 @@ section {
   align-items: flex-end;
   padding: 0; 
 }
-.basis-title {
+
+/* .basis-title span{
+  color: hsl(0 0% 100% / 0.1);
+  background-clip: text;
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, black, black);
+  animation: scroll-reveal linear forwards;
+  animation-timeline: view();
+}
+.basis-title h2 span {
+  animation-range-start: cover 10vh;
+  animation-range-end: cover 30vh;
+}
+.basis-title h1 span {
+  animation-range-start: cover 10vh;
+  animation-range-end: cover 30vh;
+}
+
+@keyframes scroll-reveal {
+  to { background-size: 100% 100%;}
+} */
+
+
+/* .basis-title {
   position: relative;
   width: 100%;
 }
@@ -387,11 +423,10 @@ section {
   left: 0;
   list-style: none;
   white-space: nowrap;
-}
+} */
 
 .basis-welcome {
   margin-top: 3rem;
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -402,6 +437,7 @@ section {
 .basis-welcome p {
   margin-top: 1rem;
 }
+
 .basis-welcome p:nth-child(1) {
   color: #5191B9;
   font-weight: 800;
@@ -446,7 +482,7 @@ section {
 }
 
 .kids1 {
-  padding-left: 1rem;
+  margin-left: 2rem;
 }
 .kids1, .kids2 {
   /* position: absolute; */
@@ -494,6 +530,11 @@ section {
   font-size: 14px;
 }
 
+
+.person:hover {
+  transform: scale(1.4);
+  transition: all 1s;
+}
 
 
 

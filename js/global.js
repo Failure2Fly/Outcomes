@@ -1,4 +1,4 @@
-gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,MotionPathPlugin,TextPlugin);
+gsap.registerPlugin(Flip,ScrollTrigger,ScrollSmoother,Observer,ScrollToPlugin,MotionPathPlugin,TextPlugin, SplitText, DrawSVGPlugin);
 
 
 var hamburger = document.querySelector(".hamburger");
@@ -17,6 +17,15 @@ document.querySelectorAll("nav a").forEach((e, index) => {
     });
   });
 });
+
+
+let smoother = ScrollSmoother.create({ 
+  wrapper: '#smooth-wrapper',
+  content: '#smooth-content',
+  smooth: 4,
+  effects: true
+});
+
 
 
 let outcomeIntro = Observer.create({
@@ -50,7 +59,7 @@ function studentScrollDown() {
   });
 
   gsap.to("#title", {
-    duration: 2,
+    duration: 3,
     opacity: 1,
     // yPercent: 150,
     ease: "linear",
@@ -111,17 +120,34 @@ gsap.to(basis, {
   }
 });
 
-const container = document.querySelector(".basis-h1-mask-container");
+// const container = document.querySelector(".basis-h1-mask-container");
 
-document.body.addEventListener("mousemove", e => {
-  const x = e.clientX;
-  const y = e.clientY - 35;
-  gsap.to(container, {
-    y: y
-  });
-  gsap.to(".basis-h1-mask", {
-    y: -y
-  });
+// document.body.addEventListener("mousemove", e => {
+//   const x = e.clientX;
+//   const y = e.clientY - 35;
+//   gsap.to(container, {
+//     y: y
+//   });
+//   gsap.to(".basis-h1-mask", {
+//     y: -y
+//   });
+// });
+
+
+let basisText = new SplitText(".basis-title", {
+  type: "words"
+});
+
+
+gsap.from(basisText.words, {
+  opacity: 0.05,
+  stagger: .2,
+  scrollTrigger: {
+    trigger: '#section2',
+    start: "top bottom-=300px",
+    end: "bottom 80%",
+    scrub: true
+  }
 });
 
 
@@ -178,6 +204,11 @@ gsap.to(locations, {
   }
 });
 
+
+gsap.from(".arizona", {
+  duration: 2,
+  drawSVG: 0,
+}, 0.1);
 
 
 // let test = gsap.timeline({scrollTrigger: {trigger: ".school-container"}}); 
