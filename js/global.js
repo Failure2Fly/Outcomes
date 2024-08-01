@@ -1,4 +1,4 @@
-gsap.registerPlugin(Flip,ScrollTrigger,ScrollSmoother,Observer,ScrollToPlugin,MotionPathPlugin,TextPlugin, SplitText, DrawSVGPlugin);
+gsap.registerPlugin(Flip, ScrollTrigger, ScrollSmoother, Observer, ScrollToPlugin, MotionPathPlugin, TextPlugin, SplitText, DrawSVGPlugin, CustomEase, CustomBounce);
 
 
 var hamburger = document.querySelector(".hamburger");
@@ -205,10 +205,79 @@ gsap.to(locations, {
 });
 
 
-gsap.from(".arizona", {
+CustomBounce.create("myBounce", {
+  strength: .6,
+  squash: 3,
+  squashID: "myBounce-squash",
+});
+
+let arizonaPins = document.querySelectorAll(".arizonaBounceEffect");
+let texasPins = document.querySelectorAll(".texasBounceEffect");
+let count = 0.05;
+
+arizonaPins.forEach((arizonaPin) => {
+  gsap.from(arizonaPin, { 
+    duration: 2, 
+    y: -100,
+    delay: count,
+    ease: "myBounce" 
+  });
+  count = count + 0.05;
+  //and do the squash/stretch at the same time:
+  gsap.to(arizonaPin, {
+    duration: 2,
+    scaleX: 1.4,
+    scaleY: 0.6,
+    ease: "myBounce-squash",
+    transformOrigin: "center bottom",
+  });
+});
+
+gsap.from("#Path_164", {
   duration: 2,
+  stagger: 0.5, 
   drawSVG: 0,
-}, 0.1);
+  // opacity: 0
+});
+
+
+
+texasPins.forEach((texasPin) => {
+  gsap.from(texasPin, { 
+    duration: 2, 
+    y: -100,
+    delay: count,
+    ease: "myBounce",
+    scrollTrigger: {
+      trigger: '.location',
+      horizontal: true,
+      start: 'left 80%',
+      toggleActions: 'play none none reset'
+    } 
+  });
+  count = count + 0.05;
+  //and do the squash/stretch at the same time:
+  gsap.to(texasPin, {
+    duration: 2,
+    scaleX: 1.4,
+    scaleY: 0.6,
+    ease: "myBounce-squash",
+    transformOrigin: "center bottom",
+    scrollTrigger: {
+      trigger: '.location',
+      horizontal: true,
+      start: 'left 80%',
+      toggleActions: 'play none none reset'
+    }
+  });
+});
+
+gsap.from("#Path_60", {
+  duration: 2,
+  stagger: 0.5, 
+  drawSVG: 0,
+  // opacity: 0
+});
 
 
 // let test = gsap.timeline({scrollTrigger: {trigger: ".school-container"}}); 

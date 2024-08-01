@@ -622,12 +622,12 @@ section {
   display: flex;
   flex-direction: column;
 }
-.location.one h3, .location.two h3 {
+.location.one h3, .location.two h3, .location.three {
   width: 100%;
   display: flex;
   justify-content: flex-start;
 }
-.arizona, .texas {
+.arizona, .texas, .washington-dc {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -635,11 +635,19 @@ section {
   width: 100%;
   height: 100%;
 }
-.arizona-locations, .texas-locations {
+.arizona-locations, .texas-locations, .lousiana-washington-dc-locations {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
+}
+#Path_164 {
+  stroke-width: 5px;
+  stroke: grey;
+}
+#Path_60 {
+  stroke-width: 5px;
+  stroke: grey;
 }
 
 .arizona-locations, .arizona-map, .texas-locations, .texas-map {
@@ -824,20 +832,38 @@ section {
 
 
 
-.arizona-stats, .texas-stats, .louisiana-stats, .washington-stats {
+.arizona-testing-map, .texas-stats, .louisiana-stats, .washington-stats {
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
 }
-.arizona-stats {
+.arizona-testing-map {
   background-image: url(./images/faded-arizona.png);
 }
-.arizona-stats img {
+.arizona-testing-map .hovering-circle {
   position: absolute;
   top: -4%;
-  left: 25%;
+  left: 55%;
 }
+.arizona-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.arizona-stats .bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
 .texas-stats {
   background-image: url(./images/faded-texas.png);
 }
