@@ -1403,6 +1403,71 @@ i.arrow {
   }
 
 
+  .school-container .panel.one {
+    padding: 1rem;
+  }
+
+
+  .location {
+    padding: 2rem;
+  }
+  .location.one .arizona, .arizona-locations {
+    flex-direction: column;
+  }
+  .location.two .texas, .texas-locations {
+    flex-direction: column;
+  }
+  .location.one h3, .location.two h3, .location.three h3 {
+    font-size: 52px;
+  }
+
+
+  .testing.one .content, .testing.two .content {
+    flex-direction: column;
+  }
+  .testing.one .content .text-box {
+    width: 100%;
+    padding: 2rem;
+  }
+  .testing.one .content .text-box h2 {
+    font-size: 52px;
+  }
+  .testing.one .content .text-box, .testing.one .content .oced-scores, .testing.one .content .stats, .testing.one .source {
+    width: 100%;
+  }
+  .testing.two .text-box {
+    width: 100%;
+  }
+  .testing.two .text-box .top-image {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .testing.two .text-box .sat-act .basis-stats {
+    width: 100vw;
+  }
+  .sat-act h4 {
+    padding: 1.5rem;
+    font-size: 36px;
+  }
+  .national-rankings {
+    display: none !important;
+  }
+
+
+
+
+
+  .graduate.one .top-row {
+    flex-direction: column;
+    margin-bottom: 6rem;
+  }
+  .graduate.one .top-row .title-and-images h2 {
+    font-size: 60px;
+    padding: 2rem;
+  }
+  .graduate.one .top-row .right-image img {
+    height: 35vh;
+  }
 
   .graduate.one .wrapper {
     flex-direction: column;
