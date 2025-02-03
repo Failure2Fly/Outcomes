@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Outcomes</title>
-  <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@4/themes/light.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
   <button class="hamburger hamburger--squeeze" type="button">
@@ -43,8 +44,6 @@
         <div class="basis-container">
   
           <section class="basis one">
-          
-            <!-- <canvas id="demoCanvas" width="209" height="73"></canvas> -->
   
             <div class="best-of-basis">
               <div class="basis-title">
@@ -145,7 +144,7 @@
       <div id="section3">
         <div class="school-container">
   
-          <section class="panel one">
+          <section class="panel one ">
             <h3>School Growth Timeline</h3>
             <!-- <div id="schoolGrowth" style="height: 800px; width: 100%;"></div> -->
             <div id="chart_div" style="height: 100%; width: 100%;"></div>
@@ -926,10 +925,10 @@
             <div class="top-row">
               <div class="title-and-images">
                 <h2>Graduate Profile</h2>
-                <div class="images">
+                <!-- <div class="images">
                   <img class="purple" src="./images/purple-border-image.png" alt="" />
                   <img class="green" src="./images/green-border-image.png" alt="" /> 
-                </div>
+                </div> -->
               </div>
               <div class="right-image">
                 <img src="./images/three-kids-graduation.png" alt="Graduate Profile" />
@@ -1006,7 +1005,63 @@
           <section class="graduate two">
             <h2>COLLEGES</h2>
             <div class="colleges">
-              <img src="./images/colleges/amherst.png" alt="Amherst College">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="./images/colleges/amherst.png" alt="Amherst College"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/bowdoin.png" alt="Bowdoin College"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/brown.png" alt="Brown University"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/caltech.png" alt="California Institute of Technology"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/carleton.png" alt="Carleton College"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/columbia.png" alt="Columbia University"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/cornell.png" alt="Cornell University"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/dartmouth.png" alt="Dartmouth College"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/harvard.png" alt="Harvard University"></div>
+
+                  <div class="swiper-slide"><img src="./images/colleges/john-hoskins.png" alt="Johns Hopkins University"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/mit.png" alt="Massachusetts Institute of Technology"></div>
+                  <div class="swiper-slide"><img src="./images//colleges/northwestern.png" alt="Northwestern University"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/notre-dame.png" alt="University of Notre Dame"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/notre-dame-seal.png" alt="University of Notre Dame Seal"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges//penn.png" alt="University of Pennsylvania"></div>
+                  
+                  <div class="swiper-slide"><img src="./images//colleges/pomona.png" alt="Pomona College"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/princeton.png" alt="Princeton University"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/rice.png" alt="Rice University"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/stanford.png" alt="Stanford University"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/swarthmore.png" alt="Swarthmore College"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/texas-a-and-m.png" alt="Texas A&M University"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/texas-tech.png" alt="Texas Tech University"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/ucla.png" alt="University of California, Los Angeles"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/university-of-chicago.png" alt="University of Chicago"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/university-of-texas-austin.png" alt="University of Texas at Austin"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/university-of-texas-san-antonio.png
+                    " alt="University of Texas at San Antonio"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/us-naval-academy.png" alt="United States Naval Academy"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/utsa.png" alta="utsa" /></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/vanderbilt.png" alt="Vanderbilt University"></div>
+                  
+                  <div class="swiper-slide"><img src="./images/colleges/wellesley.png" alt="Wellesley College"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/west-point-military-academy.png" alt="United States Military Academy"></div>
+                  <div class="swiper-slide"><img src="./images/colleges/williams-college.png" alt="Williams College"></div>
+                </div>
+              </div>
+              <!-- <img src="./images/colleges/amherst.png" alt="Amherst College">
               <img src="./images/colleges/bowdoin.png" alt="Bowdoin College">
               <img src="./images/colleges/brown.png" alt="Brown University">
               <img src="./images/colleges/caltech.png" alt="California Institute of Technology">
@@ -1038,7 +1093,7 @@
               <img src="./images/colleges/vanderbilt.png" alt="Vanderbilt University">
               <img src="./images/colleges/wellesley.png" alt="Wellesley College">
               <img src="./images/colleges/west-point-military-academy.png" alt="United States Military Academy">
-              <img src="./images/colleges/williams-college.png" alt="Williams College">
+              <img src="./images/colleges/williams-college.png" alt="Williams College"> -->
             </div>
           </section>
   
@@ -1189,6 +1244,7 @@
   <script src="./gsap-premium/gsap-premium/minified/CustomEase.min.js"></script>
   <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>

@@ -1,5 +1,15 @@
 gsap.registerPlugin(Flip, ScrollTrigger, ScrollSmoother, Observer, ScrollToPlugin, MotionPathPlugin, TextPlugin, SplitText, DrawSVGPlugin, CustomEase, CustomBounce);
 
+ScrollTrigger.normalizeScroll(true);
+
+let smoother = ScrollSmoother.create({ 
+  wrapper: '#smooth-wrapper',
+  content: '#smooth-content',
+  speed: .5,
+  smooth: 2,
+  effects: true,
+  normalizeScroll: true
+});
 
 var hamburger = document.querySelector(".hamburger");
 
@@ -9,93 +19,64 @@ hamburger.addEventListener("click", function() {
 
 document.querySelectorAll("nav a").forEach((e, index) => {
   e.addEventListener("click", () => {
-    gsap.to(window, {
-      duration: 1, 
-      scrollTo:{
-        y:"#section" + (index + 1)
-      }
-    });
+    smoother.scrollTo(
+      "#section" + (index + 1),
+    );
   });
 });
 
 
-let smoother = ScrollSmoother.create({ 
-  wrapper: '#smooth-wrapper',
-  content: '#smooth-content',
-  smooth: 4,
-  effects: true
+
+// ScrollSmoother.create({ 
+//   wrapper: '#smooth-wrapper',
+//   content: '#smooth-content',
+//   speed: .5,
+//   // smooth: 2,
+//   effects: true,
+//   normalizeScroll: true
+// });
+
+
+
+
+
+
+// let outcomeIntro = Observer.create({
+//   type: "wheel,touch,pointer",
+//   wheelSpeed: 1,
+//   onDown: () => studentScrollDown(),
+//   onUp: () => studentScrollUp(),
+//   lockAxis: true,
+//   preventDefault: true, 
+// });
+
+
+gsap.timeline({scrollTrigger: {
+    trigger: "#home",
+    pin: true,
+    scrub: 1,
+  }
+})
+.to("#bg_back", {
+  duration: 2,
+  ease: "linear",
+})
+.to("#students" , {
+  duration: 3,
+  xPercent: 110,
+  ease: "linear"
+})
+.to("#bg_front", {
+  duration: 2,
+  xPercent: -100,
+  ease: "linear"
+}, '<')
+.to("#title", {
+  duration: 3,
+  opacity: 1,
+  ease: "linear",
 });
 
-
-
-let outcomeIntro = Observer.create({
-  type: "wheel,touch,pointer",
-  wheelSpeed: 1,
-  onDown: () => studentScrollDown(),
-  onUp: () => studentScrollUp(),
-  lockAxis: true,
-  preventDefault: true 
-});
-
-
-function studentScrollDown() {
-  gsap.to("#students" , {
-    duration: 3,
-    xPercent: 110,
-    ease: "linear"
-  });
-
-  gsap.to("#bg_front", {
-    duration: 2,
-    // opacity: 0,
-    xPercent: -100,
-    ease: "linear"
-  });
-
-  gsap.to("#bg_back", {
-    duration: 2,
-    // opacity: 1,
-    ease: "linear"
-  });
-
-  gsap.to("#title", {
-    duration: 3,
-    opacity: 1,
-    // yPercent: 150,
-    ease: "linear",
-    onComplete: () => {
-      outcomeIntro.disable();
-    }
-  });
-}
-
-function studentScrollUp() {
-  gsap.to("#students" , {
-    duration: 3,
-    xPercent: 0,
-    ease: "linear"
-  });
-
-  gsap.to("#bg_front", {
-    duration: 2,
-    // opacity: 1,
-    xPercent: 0,
-    ease: "linear"
-  });
-
-  gsap.to("#bg_back", {
-    duration: 2,
-    // opacity: 0,
-    ease: "linear"
-  });
-
-  gsap.to("#title", {
-    duration: 2,
-    opacity: 0,
-    // yPercent: 0,
-    ease: "linear"
-  });
-}
 
 
 
@@ -105,20 +86,20 @@ function studentScrollUp() {
 // })
 
 // Get each Panel
-let basis = gsap.utils.toArray(".basis");
-// Set Panels to horizontally scroll
-gsap.to(basis, {
-  xPercent: -100 * (basis.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".basis-container",
-    snap: 1 / (basis.length - 1),
-    pin: true,
-    scrub: 1,
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=2000"
-  }
-});
+// let basis = gsap.utils.toArray(".basis");
+// // Set Panels to horizontally scroll
+// gsap.to(basis, {
+//   xPercent: -100 * (basis.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".basis-container",
+//     snap: 1 / (basis.length - 1),
+//     pin: true,
+//     scrub: 1,
+//     // base vertical scrolling on how wide the container is so it feels more natural.
+//     end: "+=2000"
+//   }
+// });
 
 // const container = document.querySelector(".basis-h1-mask-container");
 
@@ -134,6 +115,18 @@ gsap.to(basis, {
 // });
 
 
+// const tl = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".basis.one",
+//     scrub: 1,
+//     start: "top top",
+//     end: "+=1200",
+//     toggleActions: "play pause play reset",
+//     markers: true,
+//   },
+// });
+
+
 let basisText = new SplitText(".basis-title", {
   type: "words"
 });
@@ -143,15 +136,60 @@ gsap.from(basisText.words, {
   opacity: 0.05,
   stagger: .2,
   scrollTrigger: {
-    trigger: '#section2',
-    start: "top bottom-=300px",
+    trigger: '.basis.one',
+    start: "top 30%",
     end: "bottom 80%",
-    scrub: true
-  }
+    scrub: true,
+  },
 });
 
 
 
+gsap.fromTo(".kids1", { 
+  xPercent: 100,
+  duration: 3,
+  ease: "power1.inOut",
+  scrollTrigger: { 
+    trigger: ".basis.one",
+    toggleActions: "restart none restart none",
+    start: "top 30%",
+    // markers: true,
+  },
+}, 
+{ 
+  xPercent: 0,
+  duration: 3,
+  ease: "power1.inOut",
+  scrollTrigger: { 
+    trigger: ".basis.one",
+    toggleActions: "restart none restart none",
+    bottom: "top 80%",
+    // markers: true,
+  },
+});
+
+
+
+gsap.fromTo(".kids2", { 
+  xPercent: -100,
+  duration: 2,
+  ease: "power1.inOut",
+  scrollTrigger: { 
+    trigger: ".basis.two",
+    toggleActions: "restart none restart none",
+    start: "top 30%",
+  },
+}, 
+{ 
+  xPercent: 0,
+  duration: 2,
+  ease: "power1.inOut",
+  scrollTrigger: { 
+    trigger: ".basis.two",
+    toggleActions: "restart none restart none",
+    start: "top 80%",
+  },
+});
 
 
 
@@ -175,34 +213,34 @@ gsap.from(basisText.words, {
 
 
 
-let sections = gsap.utils.toArray(".panel");
-gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".school-container",
-    snap: 1 / (sections.length - 1),
-    pin: true,
-    scrub: 1,
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=1000"
-  }
-});
+// let sections = gsap.utils.toArray(".panel");
+// gsap.to(sections, {
+//   xPercent: -100 * (sections.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".school-container",
+//     snap: 1 / (sections.length - 1),
+//     pin: true,
+//     scrub: 1,
+//     // base vertical scrolling on how wide the container is so it feels more natural.
+//     end: "+=1000"
+//   }
+// });
 
 
-let locations = gsap.utils.toArray(".location");
-gsap.to(locations, {
-  xPercent: -100 * (locations.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".location-container",
-    snap: 1 / (locations.length - 1),
-    pin: true,
-    scrub: 1,
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=3000"
-  }
-});
+// let locations = gsap.utils.toArray(".location");
+// gsap.to(locations, {
+//   xPercent: -100 * (locations.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".location-container",
+//     snap: 1 / (locations.length - 1),
+//     pin: true,
+//     scrub: 1,
+//     // base vertical scrolling on how wide the container is so it feels more natural.
+//     end: "+=3000"
+//   }
+// });
 
 
 CustomBounce.create("myBounce", {
@@ -217,19 +255,33 @@ let count = 0.05;
 
 arizonaPins.forEach((arizonaPin) => {
   gsap.from(arizonaPin, { 
-    duration: 2, 
-    y: -100,
+    duration: 3, 
+    y: -200,
     delay: count,
-    ease: "myBounce" 
+    ease: "myBounce",
+    scrollTrigger: { 
+      trigger: '.location.one',
+      scrub: 3,
+      start: 'top 50%',
+      end: 'bottom bottom',
+      // markers: true,
+    },
   });
   count = count + 0.05;
   //and do the squash/stretch at the same time:
   gsap.to(arizonaPin, {
-    duration: 2,
+    duration: 3,
     scaleX: 1.4,
-    scaleY: 0.6,
+    scaleY: 1.4,
     ease: "myBounce-squash",
-    transformOrigin: "center bottom",
+    // transformOrigin: "center bottom",
+    scrollTrigger: { 
+      trigger: '.location.one',
+      scrub: 3,
+      start: 'top 50%',
+      end: 'bottom bottom',
+      // markers: true,
+    },
   });
 });
 
@@ -237,7 +289,12 @@ gsap.from("#Path_164", {
   duration: 2,
   stagger: 0.5, 
   drawSVG: 0,
-  // opacity: 0
+  scrollTrigger: { 
+    trigger: '.location.one',
+    scrub: 1,
+    start: 'left 50%',
+    end: 'right right',
+  },
 });
 
 
@@ -245,15 +302,15 @@ gsap.from("#Path_164", {
 texasPins.forEach((texasPin) => {
   gsap.from(texasPin, { 
     duration: 2, 
-    y: -100,
+    y: -200,
     delay: count,
     ease: "myBounce",
-    scrollTrigger: {
-      trigger: '.location',
-      horizontal: true,
-      start: 'left 80%',
-      toggleActions: 'play none none reset'
-    } 
+    scrollTrigger: { 
+      trigger: '.location.two',
+      scrub: 3,
+      start: 'left 50%',
+      end: 'right right',
+    },
   });
   count = count + 0.05;
   //and do the squash/stretch at the same time:
@@ -263,12 +320,12 @@ texasPins.forEach((texasPin) => {
     scaleY: 0.6,
     ease: "myBounce-squash",
     transformOrigin: "center bottom",
-    scrollTrigger: {
-      trigger: '.location',
-      horizontal: true,
-      start: 'left 80%',
-      toggleActions: 'play none none reset'
-    }
+    scrollTrigger: { 
+      trigger: '.location.two',
+      scrub: 3,
+      start: 'left 50%',
+      end: 'right right',
+    },
   });
 });
 
@@ -276,7 +333,12 @@ gsap.from("#Path_60", {
   duration: 2,
   stagger: 0.5, 
   drawSVG: 0,
-  // opacity: 0
+  scrollTrigger: { 
+    trigger: '.location.two',
+    scrub: 1,
+    start: 'left 50%',
+    end: 'right right',
+  },
 });
 
 
@@ -297,49 +359,79 @@ gsap.from("#Path_60", {
 
 
 
-let testing = gsap.utils.toArray(".testing");
-gsap.to(testing, {
-  xPercent: -100 * (testing.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".testing-container",
-    snap: 1 / (testing.length - 1),
-    pin: true,
-    scrub: 1,
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=4000"
-  }
+// let testing = gsap.utils.toArray(".testing");
+// gsap.to(testing, {
+//   xPercent: -100 * (testing.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".testing-container",
+//     snap: 1 / (testing.length - 1),
+//     pin: true,
+//     scrub: 1,
+//     // base vertical scrolling on how wide the container is so it feels more natural.
+//     end: "+=4000"
+//   }
+// });
+
+// let graduate = gsap.utils.toArray(".graduate");
+// gsap.to(graduate, {
+//   xPercent: -100 * (graduate.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".graduate-container",
+//     snap: 1 / (graduate.length - 1),
+//     pin: true,
+//     scrub: 1,
+//     // base vertical scrolling on how wide the container is so it feels more natural.
+//     end: "+=2000"
+//   }
+// });
+
+// let testimonial = gsap.utils.toArray(".testimonial");
+// gsap.to(testimonial, {
+//   xPercent: -100 * (testimonial.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".testimonial-container",
+//     snap: 1 / (testimonial.length - 1),
+//     pin: true,
+//     scrub: 1,
+//     // base vertical scrolling on how wide the container is so it feels more natural.
+//     end: "+=1000"
+//   }
+// });
+
+
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 30,
+  slidesPerView: 6,
+  infinite: true,
+  loop: true,
+  autoplay: true,
+  grid: {
+    fill: 'column',
+    rows: 4,
+  },
+  breakpointBase: 'window',
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+    1200: {
+      slidesPerView: 4,
+    },
+    1400: {
+      slidesPerView: 5,
+    },
+  },
 });
-
-let graduate = gsap.utils.toArray(".graduate");
-gsap.to(graduate, {
-  xPercent: -100 * (graduate.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".graduate-container",
-    snap: 1 / (graduate.length - 1),
-    pin: true,
-    scrub: 1,
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=2000"
-  }
-});
-
-let testimonial = gsap.utils.toArray(".testimonial");
-gsap.to(testimonial, {
-  xPercent: -100 * (testimonial.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".testimonial-container",
-    snap: 1 / (testimonial.length - 1),
-    pin: true,
-    scrub: 1,
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=1000"
-  }
-});
-
-
+swiper.init();
 
 
 $(function() {
@@ -358,3 +450,4 @@ $(function() {
     $(this).off();
   });
 });
+
