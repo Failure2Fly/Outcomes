@@ -391,15 +391,17 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 2rem;
 }
 .basis.one, .basis.two {
   /* margin: 6rem 0; */
   /* height: 120vh; */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   /* align-items: flex-start; */
-  padding: 0; 
+  padding: 0;
+  margin-top: 3rem; 
 }
 
 /* .basis-title span{
@@ -454,9 +456,9 @@ section {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  column-gap: 3rem;
+  column-gap: 2rem;
   height: 100vh;
-  padding: 2rem 2rem 0 2rem;
+  padding: 0 1rem;
 }
 .basis-welcome p {
   margin-top: 1rem;
@@ -1354,13 +1356,16 @@ i.arrow {
 
   .basis.one, .basis.two {
     flex-direction: column;
+  }
+  .best-of-basis {
+    padding: 0 1rem;
   }  
   .basis.one h1 {
     font-size: 100px;
   } 
-  .basis-title {
+  /* .basis-title {
     padding: 2rem 2rem 0 2rem;
-  }
+  } */
   .basis-title h2 {
     font-size: 56px;
   }
