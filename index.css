@@ -387,7 +387,6 @@ section {
   height: 400vh;
 } */
 .best-of-basis {
-  padding: 4rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -426,10 +425,9 @@ section {
 } */
 
 
-/* .basis-title {
-  position: relative;
-  width: 100%;
-}
+/*.basis-title {
+  padding: 2rem;
+} 
 .basis-h1 {
   position: absolute;
   left: 0;
@@ -453,16 +451,16 @@ section {
 } */
 
 .basis-welcome {
-  margin-top: 3rem;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 60%;
   flex-wrap: wrap;
   column-gap: 3rem;
+  height: 100vh;
+  padding: 2rem 2rem 0 2rem;
 }
 .basis-welcome p {
   margin-top: 1rem;
+  width: 50%;
 }
 
 .basis-welcome p:nth-child(1) {
@@ -981,6 +979,8 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: .5rem;
+  width: 60%;
+  text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
   z-index: 99;
   -webkit-transition: all 0.5s ease;
@@ -1350,8 +1350,78 @@ i.arrow {
     transform: scale(1.2);
   }
 
+
+
+  .basis.one, .basis.two {
+    flex-direction: column;
+  }  
+  .basis.one h1 {
+    font-size: 100px;
+  } 
+  .basis-title {
+    padding: 2rem 2rem 0 2rem;
+  }
+  .basis-title h2 {
+    font-size: 56px;
+  }
+  .basis-welcome {
+    flex-wrap: nowrap;
+    height: auto;
+    padding-bottom: 3rem;
+  }
+  .basis-welcome p {
+    width: 100%;
+  }
+  .kids1, .kids2 {
+    height: 50vh;
+  }
+
+
+  .basis.two .content {
+    flex-direction: column;
+  }
+  .basis.two .content .text-box {
+    padding: 2rem;
+  }
+  .basis.two .content .leadership {
+    width: 100%;
+    padding: 0;
+  }
+  .basis.two .leadership h3 {
+    font-size: 52px;
+  }
+  .basis-and-texas {
+    flex-direction: column;
+  }
+  .texas-charter {
+    margin-top: 3rem;
+  }
+
+
+
+  .graduate.one .wrapper {
+    flex-direction: column;
+  }
+  .stat-boxes {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+
+
+  .graduate.two {
+    margin-top: 6rem;
+  }
   .graduate.two h2 {
     font-size: 60px;
+  }
+  .colleges {
+    padding: 3rem 0;
+  }
+
+
+  .testimonial .outerdiv {
+    padding: 3rem 0;
   }
   .testimonial.one h3 {
     font-size: 40px;

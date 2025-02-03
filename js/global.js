@@ -137,8 +137,8 @@ gsap.from(basisText.words, {
   stagger: .2,
   scrollTrigger: {
     trigger: '.basis.one',
-    start: "top 30%",
-    end: "bottom 80%",
+    start: "-20%",
+    end: "5%",
     scrub: true,
   },
 });
