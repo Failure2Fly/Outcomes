@@ -859,17 +859,21 @@ section {
 
 
 
-.arizona-testing-map, .texas-stats, .louisiana-stats, .washington-stats {
+.arizona-stats, .texas-stats, .louisiana-stats, .washington-stats {
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+  background-size: contain;
 }
-.arizona-testing-map {
+/* .arizona-testing-map {
+  background-image: url(./images/faded-arizona.png);
+} */
+.arizona-stats {
   background-image: url(./images/faded-arizona.png);
 }
-.arizona-testing-map .hovering-circle {
+/* .arizona-testing-map .hovering-circle {
   position: absolute;
   top: -4%;
   left: 55%;
@@ -887,18 +891,18 @@ section {
 .arizona-stats .bottom {
   display: flex;
   flex-direction: row;
-}
+} */
 
 
 
 .texas-stats {
   background-image: url(./images/faded-texas.png);
 }
-.texas-stats img {
+/* .texas-stats img {
   position: absolute;
   bottom: -5%;
   right: 5%;
-}
+} */
 .louisiana-stats {
   background-image: url(./images/faded-louisiana.png);
 }
@@ -1455,6 +1459,17 @@ i.arrow {
 
 
 
+  .testing.three .content, .testing.four .content {
+    flex-direction: column;
+  }
+  .arizona-stats img, .texas-stats img, .louisiana-stats img, .washington-stats img{
+    width: 50vw;
+  }
+  .arizona-stats, .texas-stats, .louisiana-stats, .washington-stats {
+    height: auto;
+    width: auto;
+    padding: 4rem;
+  }
 
 
   .graduate.one .top-row {
