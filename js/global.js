@@ -22,6 +22,7 @@ document.querySelectorAll("nav a").forEach((e, index) => {
     smoother.scrollTo(
       "#section" + (index + 1),
     );
+    hamburger.classList.toggle("is-active");
   });
 });
 
